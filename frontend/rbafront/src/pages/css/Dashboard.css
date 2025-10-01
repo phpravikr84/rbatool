@@ -1,0 +1,125 @@
+/* Dashboard main content area */
+.main-content {
+  background: #1f1f2e;
+  color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  min-height: 100vh;
+  flex: 1; /* take remaining space */
+  overflow-y: auto;
+}
+
+/* Page title */
+.header-title-page {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  border-left: 5px solid #E900B6;
+  padding-left: 0.8rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* Filter section */
+.top-filter-class {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Select box */
+.tenure-select-box {
+  background: #2c2c3c;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+}
+
+.tenure-select-box:focus {
+  outline: none;
+  border-color: #E900B6;
+  box-shadow: 0 0 6px rgba(233, 0, 182, 0.6);
+}
+
+/* Widget cards container */
+.widget-main-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsive grid */
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Widget card */
+.widget-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: start;
+}
+
+.widget-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Chart sections */
+.box-background {
+  background: #262636;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chart-headers {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.card-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+}
+
+/* Table/Search input */
+.card input.form-control {
+  background: #2c2c3c;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+}
+
+.card input.form-control::placeholder {
+  color: #aaa;
+}
+
+/* Scrollbar for charts area */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+.main-content::-webkit-scrollbar-thumb {
+  background: #7E01E5;
+  border-radius: 10px;
+}
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .top-filter-class {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+}

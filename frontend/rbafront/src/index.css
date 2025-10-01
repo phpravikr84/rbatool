@@ -1,0 +1,174 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Header Styling (Unchanged from your provided code) */
+/* Base64 SVG Noise Texture (unchanged for subtle vector texture) */
+/* Base64 SVG Noise Texture (unchanged for vector texture) */
+:root {
+  --noise: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+}
+
+/* Header Styling (Linear gradient with new colors) */
+.header {
+  background: linear-gradient(135deg, #331B4B 0%, #7102AE 50%, #E900B6 100%), var(--noise);
+  background-blend-mode: overlay; /* Blend noise texture with gradient */
+  padding: 1rem 2rem;
+  color: #FFFFFF; /* White text for max contrast */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-size: 150% 150%;
+  animation: gradientShift 12s ease infinite; /* Subtle gradient animation */
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effect for header interactivity */
+.header:hover {
+  background-position: 100% 50%;
+}
+
+/* Sidebar Styling (Radial gradient with all five colors) */
+/* Sidebar Styling (Radial gradient with all five colors) */
+.sidebar {
+  background: radial-gradient(circle at center bottom, 
+              #E900B6 0%, 
+              #8D0083 25%, 
+              #7E01E5 50%, 
+              #7102AE 75%, 
+              #331B4B 100%), var(--noise);
+
+  background-blend-mode: overlay; 
+  background-size: cover;  /* <-- make gradient cover entire area */
+  background-repeat: no-repeat; 
+  background-attachment: fixed; /* keeps gradient fixed on scroll */
+
+  width: 250px;
+  height: 100vh;           /* force exact full screen height */
+  min-height: 100vh;       /* fallback */
+  padding: 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+
+  animation: gradientShift 12s ease infinite;
+  transition: all 0.3s ease;
+  flex-shrink: 0;          /* prevent shrinking inside flex parent */
+  position: sticky;        /* makes sidebar stick on scroll */
+  top: 0;                  /* required for sticky */
+}
+
+
+/* Sidebar menu items */
+.sidebar .nav-link {
+  color: #FFFFFF; /* White text for max contrast */
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* SVG icon styling */
+.sidebar .nav-link i {
+  color: #FFFFFF; /* White icons by default */
+  margin-right: 0.75rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active/Hover state for sidebar items */
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background: linear-gradient(135deg, #E900B6 0%, #7E01E5 100%), var(--noise); /* Vibrant pink-to-purple gradient */
+  color: #FFFFFF;
+  background-blend-mode: overlay;
+}
+
+/* Icon hover effect */
+.sidebar .nav-link:hover i,
+.sidebar .nav-link.active i {
+  color: #FF6F61; /* Coral icon color on hover/active */
+  transform: scale(1.1); /* Subtle scale for emphasis */
+}
+
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive adjustments with Bootstrap */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+  .sidebar.active {
+    transform: translateX(0);
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
